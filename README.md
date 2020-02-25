@@ -6,7 +6,7 @@ This is a boilerplate for a Kirby plugin that can be installed via all three [su
 
 You can find a list of Pluginkit variants on the [`master` branch](https://github.com/getkirby/pluginkit/tree/master).
 
-****
+---
 
 ## How to use the Pluginkit
 
@@ -21,18 +21,18 @@ We have a tutorial on how to build your own plugin based on the Pluginkit [in th
 
 What follows is an example README for your plugin.
 
-****
+---
 
 ## Installation
 
 ### Download
 
-Download and copy this repository to `/site/plugins/{{ plugin-name }}`.
+Download and copy this repository to `/site/plugins/moi-shared`.
 
 ### Git submodule
 
 ```
-git submodule add https://github.com/{{ your-name }}/{{ plugin-name }}.git site/plugins/{{ plugin-name }}
+git submodule add https://github.com/gplopes/moi-shared.git site/plugins/moi-shared
 ```
 
 ### Composer
@@ -43,15 +43,15 @@ composer require {{ your-name }}/{{ plugin-name }}
 
 ## Setup
 
-*Additional instructions on how to configure the plugin (e.g. blueprint setup, config options, etc.)*
+_Additional instructions on how to configure the plugin (e.g. blueprint setup, config options, etc.)_
 
 ## Options
 
-*Document the options and APIs that this plugin offers*
+_Document the options and APIs that this plugin offers_
 
 ## Development
 
-*Add instructions on how to help working on the plugin (e.g. npm setup, Composer dev dependencies, etc.)*
+_Add instructions on how to help working on the plugin (e.g. npm setup, Composer dev dependencies, etc.)_
 
 ## License
 
