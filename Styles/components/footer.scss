@@ -1,0 +1,48 @@
+footer {
+  overflow: hidden;
+  margin-top: auto;
+  padding-bottom: 60px;
+  background-color: $color-primary;
+  color: white;
+
+  a {
+    color: white;
+    &:hover {
+      color: white;
+      opacity: 0.8;
+    }
+  }
+}
+
+.footer-logo {
+  display: block;
+  max-width: 100px;
+  // @TEST
+  margin-bottom: 50px;
+}
+
+.footer-social {
+  margin-top: 20px;
+  img {
+    width: 40px;
+  }
+}
+
+.footer-nav {
+  margin-top: 15px;
+  li {
+    display: block;
+    // display: inline-block;
+    padding: 10px 0;
+  }
+  @include breakpoint($breakpoint-tablet) {
+    li {
+      padding: 10px 20px;
+      display: inline-block;
+    }
+  }
+}
+
+.footer-max-width {
+  max-width: 800px;
+}

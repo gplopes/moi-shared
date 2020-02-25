@@ -1,0 +1,77 @@
+type: group
+fields:
+  HEADLINE_CONTACT:
+    width: 1/4
+    label: Form Section
+    type: headline
+    numbered: false
+  LINE_CONTACT:
+    width: 3/4
+    type: line
+
+  # Title
+  form_title:
+    type: text
+    label: Title
+
+  # Receiver
+  form_sender:
+    type: text
+    label: Email Receiver
+
+  # Inputs
+  form_name:
+    width: 1/3
+    type: text
+    label: Name & Surname
+  form_msg:
+    width: 1/3
+    type: text
+    label: Message
+  form_button:
+    width: 1/3
+    label: "Button"
+    type: text
+
+  LINE_CONTACT_02:
+    width: 3/4
+    type: line
+  # Select
+  toggle_select:
+    type: toggle
+    label: Show Select Options
+    width: 1/3
+
+  form_select:
+    type: textarea
+    buttons: false
+    size: tiny
+    label: Select
+    when:
+      toggle_select: true
+  form_select_option:
+    label: Select Options
+    type: structure
+    when:
+      toggle_select: true
+    fields:
+      option:
+        label: Option
+        type: text
+
+  # MSG
+  LINE_CONTACT_03:
+    width: 3/4
+    type: line
+  form_send:
+    width: 1/2
+    label: Msg after send email
+    type: textarea
+    buttons: false
+    size: small
+  form_failed:
+    width: 1/2
+    label: Msg after failure sending email
+    type: textarea
+    buttons: false
+    size: small

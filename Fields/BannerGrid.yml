@@ -1,0 +1,15 @@
+type: group
+fields:
+  banner_title:
+    label: Title
+    type: textarea
+    buttons: false
+    size: small
+  hero_images:
+    translate: false
+    layout: cards
+    label: "Images"
+    multiple: true
+    type: files
+    max: 6
+    min: 6

@@ -1,0 +1,26 @@
+.cols-posts {
+  .col {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+}
+
+///
+
+.grid-cols {
+  & > * {
+    margin: 20px 0;
+  }
+  @include breakpoint($breakpoint-tablet) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    grid-gap: 20px 2%;
+    .featured {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+  }
+}

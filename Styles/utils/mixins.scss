@@ -1,0 +1,86 @@
+@mixin breakpoint($break) {
+  @media screen and (min-width: $break) {
+    @content;
+  }
+}
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url("../fonts/"+$file-name+".eot?#iefix");
+    src: url("../fonts/"+$file-name+".eot?#iefix") format("embedded-opentype"),
+      url("../fonts/"+$file-name+".woff") format("woff"),
+      url("../fonts/"+$file-name+".woff2") format("woff2"),
+      url("../fonts/"+$file-name+".ttf") format("truetype");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin baseline($font-size, $scale: 2, $padding: false) {
+  $rhythm: $base-line-height * $font-size / $scale;
+  $lines: ceil(($font-size + 0.001px) / $rhythm);
+  $line-height: $rhythm * $lines / $font-size;
+  // use the results
+  font-size: $font-size;
+  line-height: $line-height / 10;
+  //font-weight: 300;
+  font-weight: normal;
+  $baseline-distance: ($line-height - $cap-height) / 2;
+
+  @if $padding {
+    // padding-top: $baseline-distance + px;
+    padding: 0;
+    margin-bottom: ($base-line-height/2) + $baseline-distance;
+  } @else {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin cols($qnt: 1, $gap: 10px) {
+  // Settings;
+  $col-width: percentage(100 / $qnt) / 100;
+  $col-gap: $gap;
+  // Col Class
+  //@extend %clearfix;
+  min-width: 100%;
+  margin-left: -$gap;
+  margin-right: -$gap;
+  // padding: 15px 0;
+  .col {
+    @extend %clearfix;
+    width: floor($col-width) - 0.2;
+    position: relative;
+    box-sizing: border-box;
+    vertical-align: top;
+    // float: left;
+    display: inline-block;
+    transition: all 0.2s ease;
+    // Paddings
+    padding: 10px $gap;
+    // @if $qnt>3 {
+    //   padding: 0 1% $gap 1%;
+    // } @else {
+    //   padding: 0 $col-gap;
+    // }
+    // Breakpoints
+    @if $qnt>3 {
+      @media (max-width: $breakpoint-tablet-ls) {
+        width: 50%;
+        padding: 10px $gap;
+      }
+    }
+    @if $qnt==3 {
+      @media (max-width: $breakpoint-tablet) {
+        width: 50%;
+      }
+    }
+    @media (max-width: 850px) {
+      width: 100%;
+      max-width: 100%;
+      padding-top: 0;
+      //padding-bottom: 50px;
+    }
+  }
+}

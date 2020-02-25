@@ -1,0 +1,16 @@
+label: Promo List
+type: structure
+min: 3
+max: 3
+fields:
+  title:
+    label: Title
+    type: text
+  link:
+    label: Link
+    type: url
+  content:
+    label: Content
+    type: textarea
+    buttons: false
+    size: small

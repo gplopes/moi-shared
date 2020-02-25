@@ -1,0 +1,12 @@
+type: files
+headline: Files
+layout: list
+size: tiny
+info: "{{ file.dimensions }}"
+translate: false
+multiple: true
+image:
+  query: page.cover
+  cover: true
+  back: 'pattern',
+  ratio: 6/2

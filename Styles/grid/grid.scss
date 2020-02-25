@@ -1,0 +1,123 @@
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+main {
+  //@extend %clearfix;
+  float: left;
+  width: 100%;
+}
+
+footer,
+section {
+  @extend %clearfix;
+  float: left;
+  width: 100%;
+  position: relative;
+  // padding: 50px 0;
+  &.standard {
+    padding: 30px 0;
+  }
+  &.first {
+    padding: 30px 0 30px;
+    @include breakpoint($breakpoint-tablet) {
+      padding: 90px 0 30px;
+    }
+  }
+}
+
+.row {
+  @extend %clearfix;
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.container {
+  max-width: 1600px; //1350px; //1400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 60px;
+
+  &.narrow {
+    max-width: 1200px;
+  }
+  @media (max-width: $breakpoint-phablet) {
+    padding: 0 15px;
+  }
+}
+
+.title {
+  @media (max-width: $breakpoint-phablet) {
+    text-align: center;
+  }
+}
+
+.content {
+  max-width: 752px;
+  // margin: 0 auto;
+}
+
+.cols-1 {
+  @include cols(1);
+}
+
+.cols-2 {
+  @include cols(2);
+}
+
+.cols-3 {
+  @include cols(3);
+}
+
+.cols-4 {
+  @include cols(4);
+}
+
+.cols-6 {
+  @include cols(6);
+}
+
+.cols-5 {
+  @include cols(5);
+}
+
+.cols-8 {
+  @include cols(8);
+}
+
+.cols-9 {
+  @include cols(9);
+}
+
+.col-content {
+  margin-left: -3%;
+  margin-right: -3%;
+  .col {
+    padding: 10px 3% !important;
+  }
+}
+
+.col-content {
+  table {
+    display: inline-table;
+    width: 100%;
+    thead {
+      white-space: nowrap;
+      th {
+        padding: 5px;
+        border-bottom: 1px solid $color-grey;
+      }
+    }
+    td {
+      padding: 5px;
+      border-bottom: 1px dotted rgba($color-grey, 0.1);
+    }
+    th:not(:last-child),
+    td:not(:last-child) {
+      border-right: 1px solid rgba($color-grey, 0.1);
+    }
+  }
+}

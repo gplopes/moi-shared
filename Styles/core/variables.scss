@@ -1,0 +1,38 @@
+// Breakpoints
+$breakpoint-desktop-ls: 1600px;
+$breakpoint-desktop: 1240px;
+$breakpoint-tablet-ls: 1050px;
+$breakpoint-tablet: 750px;
+$breakpoint-mobile: 400px;
+$breakpoint-phablet: 550px;
+
+/// Computer Breakpoint
+$breakpoint-nav: 1180px; //914px;
+
+// Misc
+$global-padding: 2% !default;
+$border-radius: 3px !default;
+$border-radius-container: 20px !default;
+$box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1),
+  0 8px 16px 0 rgba(19, 41, 104, 0.2) !default;
+
+// Typography
+$base-font-size: 16px !default;
+$base-line-height: 24px !default;
+$cap-height: 0.68;
+
+// Fonts
+//$base-font-family: 'Poppins', sans-serif;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+
+$second-font-family: "Playfair Display", serif;
+
+// The font sizes for h1-h6.
+$h1-font-size: 4 * $base-font-size !default;
+$h2-font-size: 2.5 * $base-font-size !default;
+$h3-font-size: 1.5 * $base-font-size !default;
+$h4-font-size: 1.3 * $base-font-size !default;
+$h5-font-size: 0.83 * $base-font-size !default;
+$h6-font-size: 0.67 * $base-font-size !default;

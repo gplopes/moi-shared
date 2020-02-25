@@ -1,0 +1,84 @@
+.bookingBanner-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+
+  a {
+    // margin: 20px 0;
+    width: 100%;
+  }
+  @include breakpoint($breakpoint-tablet) {
+    text-align: left;
+    a {
+      width: initial;
+    }
+  }
+}
+
+.bookingBanner-text {
+  flex: 1;
+  @include breakpoint($breakpoint-tablet) {
+    padding-right: 35px;
+  }
+}
+
+.bookingBanner-buttons {
+  margin-top: 10px;
+  .button:first-child {
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint($breakpoint-tablet) {
+    margin-top: 0;
+    .button:first-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.bookingBanner-buttons--sticky {
+  width: 100%;
+  text-align: center;
+  display: none;
+
+  position: fixed;
+  bottom: 15px;
+  right: 0;
+  z-index: 10;
+  animation: fadeUp 0.3s ease-in-out;
+  overflow: hidden;
+  border-radius: 30px;
+
+  // bottom: 50%;
+  // transform: rotate(-90deg);
+  // transform-origin: bottom right;
+
+  .button {
+    flex: 1;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  &.bottom {
+    display: flex;
+  }
+
+  @include breakpoint($breakpoint-tablet) {
+    width: initial;
+    &.bottom {
+      flex: none;
+      right: 4%;
+    }
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}

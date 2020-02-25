@@ -1,0 +1,47 @@
+label: Booking Section
+icon: calendar
+columns:
+  - width: 1/1
+    fields:
+      booking_content:
+        type: textarea
+        size: small
+        buttons: false
+        label: Promo Content
+  # Button Left
+  - width: 1/2
+    fields:
+      HEADLINE_BUTTON_LEFT:
+        label: Button Left
+        numbered: false
+        type: headline
+
+      booking_button_left_value:
+        type: text
+        label: Button Value
+      booking_button_left_link:
+        type: url
+        label: Button Link
+      booking_button_left_primary:
+        type: toggle
+        label: Primary Button
+        help: It defines the button color
+
+  # Button Right
+  - width: 1/2
+    fields:
+      HEADLINE_BUTTON_RIGHT:
+        label: Button Right
+        numbered: false
+        type: headline
+
+      booking_button_right_value:
+        type: text
+        label: Button Value
+      booking_button_right_link:
+        type: url
+        label: Button Link
+      booking_button_right_primary:
+        type: toggle
+        label: Primary Button
+        help: It defines the button color

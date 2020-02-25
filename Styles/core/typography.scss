@@ -1,0 +1,64 @@
+.h1,
+h1 {
+  @include baseline($h1-font-size, 2, true);
+  letter-spacing: -.02rem;
+  font-family: $second-font-family;
+  margin-top: 0;
+  //font-weight: bold;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 2.5rem;
+  }
+}
+
+.h2,
+h2 {
+  @include baseline($h2-font-size, 1.5);
+  letter-spacing: -.02rem;
+  font-family: $second-font-family;
+  //font-weight: bold;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 1.5rem;
+  }
+}
+
+.h3,
+h3 {
+  @include baseline($h3-font-size, 1.6);
+  letter-spacing: -.02rem;
+  font-family: $second-font-family;
+  
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 1.51572rem;
+  }
+}
+.h4,
+h4 {
+  @include baseline($h4-font-size, 1.5);
+  letter-spacing: -.02rem;
+  font-family: $second-font-family;
+}
+
+.h5,
+h5 {
+  @include baseline($h5-font-size, 0.83);
+  letter-spacing: -.05rem;
+  font-family: $second-font-family;
+}
+
+.h6,
+h6 {
+  @include baseline($h6-font-size, 0.67);
+  letter-spacing: 0;
+  font-family: $second-font-family;
+}
+
+.p,
+p {
+  @include baseline($base-font-size, 1.3, true);
+  letter-spacing: 0;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

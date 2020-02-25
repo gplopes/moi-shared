@@ -1,0 +1,19 @@
+.home-hero {
+  padding: 80px 0;
+  min-height: 520px;
+  .hero-title {
+    align-items: center;
+  }
+  .hero-fixed-bg {
+    background-position: right;
+  }
+  @include breakpoint($breakpoint-phablet) {
+    height: 600px;
+    padding: 0;
+    padding-bottom: 70px;
+    .hero-title {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+}

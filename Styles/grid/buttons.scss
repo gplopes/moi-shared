@@ -1,0 +1,107 @@
+button,
+.button {
+  outline: none;
+  display: inline-block;
+  padding: 12px 32px; //9px 32px;
+  font-weight: bold;
+  font-size: $base-font-size - 4px; //$base-font-size - 2px;
+  text-align: center;
+  //letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in-out;
+}
+
+// .big-button {
+//   color: white;
+//   background: $color-primary;
+//   margin: 20px auto;
+//   max-width: 400px;
+//   width: 100%;
+//   display: block;
+//   transition: all 0.3s ease-in-out;
+//   &:hover {
+//     color: white;
+//   }
+// }
+
+.button-primary {
+  background-color: $color-primary;
+  text-decoration: none;
+  color: white;
+  // display: block;
+  &:hover {
+    background-color: darken($color-primary, 5%);
+    color: white;
+  }
+}
+
+.button-secondary {
+  background-color: $color-bright-pink;
+  text-decoration: none;
+  color: white;
+  // display: block;
+  &:hover {
+    background-color: darken($color-bright-pink, 5%);
+    color: white;
+  }
+}
+
+.button-dark {
+  background-color: $color-blue-dark;
+  text-decoration: none;
+  color: white;
+  // display: block;
+  &:hover {
+    background-color: darken($color-blue-dark, 5%);
+    color: white;
+  }
+}
+
+.button-underline {
+  border: 1px solid $color-grey;
+}
+
+.button-white {
+  @extend .button;
+  background-color: white;
+  color: black;
+  transition: all 0.5s ease-in-out;
+  margin-top: 30px;
+  &:hover {
+    color: black;
+    opacity: 0.9;
+  }
+}
+
+.button-link {
+  cursor: pointer;
+  color: $color-primary;
+  font-size: $base-font-size - 2px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  &:after {
+    content: "→";
+    margin-left: 1px;
+  }
+  &:hover {
+    color: $color-dark-grey;
+  }
+}
+
+.button-shadow {
+  box-shadow: 0 8px 16px 0 rgba(19, 41, 104, 0.1);
+}
+
+.button-mobile-fw {
+  @media (max-width: $breakpoint-phablet) {
+    width: 100%;
+  }
+}

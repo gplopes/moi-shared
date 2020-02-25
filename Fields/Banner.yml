@@ -1,0 +1,21 @@
+type: group
+label: Banner
+fields:
+  hero_image:
+    translate: false
+    label: Image
+    help: Image 1350x600
+    width: 1/3
+    type: files
+    layout: cards
+    info: "{{ file.dimensions }}"
+    max: 1
+    min: 1
+    image:
+      cover: true
+  hero_title:
+    width: 2/3
+    label: Title
+    type: textarea
+    buttons: false
+    size: medium

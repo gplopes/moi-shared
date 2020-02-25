@@ -1,0 +1,102 @@
+@import "./body-pattern";
+
+html {
+  touch-action: manipulation;
+  font-size: 100%;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  //text-align: center;
+  color: $color-grey;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  line-height: ($base-line-height / $base-font-size) * 1em;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  //overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  @include breakpoint($breakpoint-phablet) {
+    text-align: start;
+  }
+}
+
+html,
+body {
+  &.no-scroll {
+    position: fixed;
+    overflow: hidden;
+  }
+}
+
+a {
+  color: $color-font;
+  text-decoration: none;
+  //text-decoration: underline dotted rgba(0, 0, 0, 0.2);
+  &:hover {
+    color: darken($color-link, 5%);
+  }
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-width: 0;
+  border-top: 1px solid rgba($color-light-grey, 1);
+}
+
+a[href^="tel"] {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+.breadcrumb {
+  li {
+    display: inline-block;
+    padding: 5px 0;
+    opacity: 0.5;
+    a {
+      text-decoration: none;
+    }
+    &:not(:last-child):after {
+      content: "/";
+      color: $color-light-grey;
+    }
+  }
+  & li:last-child {
+    display: none;
+  }
+}
+
+::placeholder {
+  color: $color-font;
+  opacity: 1;
+}

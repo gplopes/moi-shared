@@ -1,0 +1,71 @@
+////////////////////////////// Hero
+
+.hero-restaurant {
+  padding: 0;
+  .hero-title {
+    position: absolute;
+  }
+  .hero-grid-img {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @include breakpoint($breakpoint-phablet) {
+    .hero-grid-img {
+      height: 250px;
+    }
+  }
+}
+
+///////////////////////////////////////////// About
+
+.restaurant-intro {
+  background-repeat: no-repeat;
+  background-size: auto 150%;
+  background-position-x: right;
+  .content {
+    width: 50%;
+  }
+}
+
+/////////////////////////////////////////// Food
+
+.food-list {
+  list-style: none;
+  text-align: left;
+  li {
+    padding: 10px 0;
+    border-bottom: 1px solid $color-border;
+  }
+  small {
+    opacity: 0.7;
+  }
+}
+
+.food-title {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+
+  .h3 {
+    color: $color-primary;
+  }
+}
+.food-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.food {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  i {
+    opacity: 0.7;
+  }
+  strong {
+    display: block;
+  }
+}

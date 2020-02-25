@@ -1,0 +1,13 @@
+{
+    "name": "moi/moi-shared",
+    "description": "Moi Shared",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [{
+        "name": "Moi Team",
+        "email": "shared@moi.moi"
+    }],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    }
+}

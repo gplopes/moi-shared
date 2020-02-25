@@ -1,0 +1,18 @@
+type: group
+fields:
+  HEADLINE_MAP:
+    width: 1/4
+    label: Map Section
+    type: headline
+    numbered: false
+  LINE_MAP:
+    width: 3/4
+    type: line
+  map_title:
+    type: text
+    label: Title
+  map_content:
+    type: textarea
+    label: Content
+    buttons: false
+    size: medium

@@ -1,0 +1,36 @@
+# Promo Banner
+type: group
+fields:
+  HEADLINE_PROMOBANNER:
+    width: 1/4
+    label: Banner Section
+    type: headline
+    numbered: false
+  LINE_PROMOBANNER:
+    width: 3/4
+    type: line
+  promo_toggle:
+    width: 1/1
+    label: Show Banner?
+    type: toggle
+    icon: bolt
+    text:
+      - Hide
+      - Show
+  promo_bg:
+    type: files
+    max: 1
+    help: Image 1350x460
+    translate: false
+    label: Background
+    layout: cards
+    width: 1/3
+    when:
+      promo_toggle: true
+  promo_content:
+    width: 2/3
+    type: textarea
+    label: Content
+    size: medium
+    when:
+      promo_toggle: true

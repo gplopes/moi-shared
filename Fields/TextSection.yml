@@ -1,0 +1,18 @@
+type: group
+fields:
+  HEADLINE_INTRO:
+    width: 1/4
+    label: Text Section
+    type: headline
+    numbered: false
+  LINE_INTRO:
+    width: 3/4
+    type: line
+  summary_title:
+    label: Title
+    buttons: false
+    type: textarea
+  summary:
+    label: Summary
+    type: textarea
+    size: small
