@@ -102,5 +102,18 @@ Kirby::plugin('moi/moi-shared', [
 
             return str_replace('{{ gallery }}', $gallery, $text);
         }
+    ],
+
+    'components' => [
+        'css' => function ($kirby, $url) {
+            $file = $kirby->roots()->index() . DS . $url;
+            $date = F::modified($file);
+            return $url . '?v=' . $date;
+        },
+        'js'  => function ($kirby, $url) {
+            $file = $kirby->roots()->index() . DS . $url;
+            $date = F::modified($file);
+            return $url . '?v=' . $date;
+        }
     ]
 ]);
