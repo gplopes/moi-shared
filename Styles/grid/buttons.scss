@@ -43,12 +43,12 @@ button,
 }
 
 .button-secondary {
-  background-color: $color-bright-pink;
+  background-color: $color-secondary;
   text-decoration: none;
   color: white;
   // display: block;
   &:hover {
-    background-color: darken($color-bright-pink, 5%);
+    background-color: darken($color-secondary, 5%);
     color: white;
   }
 }

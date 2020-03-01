@@ -1,7 +1,7 @@
 <?php
 function buttonBlock($link, $primary, $value)
 {
-    $cta = $primary === true ? 'button-primary' : 'button-dark';
+    $cta = $primary === true ? 'button-primary' : 'button-secondary';
     return "<a
             onclick='return gtag_report_conversion($link);'
             href='$link'
