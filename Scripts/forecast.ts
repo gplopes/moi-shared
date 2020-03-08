@@ -36,8 +36,8 @@ const getForecast = async () => {
   const skycons = new window.Skycons();
   const $degrees = $forecast.querySelector(".js-forecast-c");
 
-  // const url = `${window.location.origin}/${document.documentElement.lang}`;
-  const url = document.location.href;
+  const url = `${window.location.origin}/${document.documentElement.lang}`;
+  // const url = document.location.href;
 
   const dataCached = getCache();
   let forecastResult = dataCached.data;
