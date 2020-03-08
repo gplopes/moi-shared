@@ -37,20 +37,22 @@
 <!-- Event snippet for Kliknutí button conversion page In your
   html page, add the snippet and call gtag_report_conversion when someone
   clicks on the chosen link or button. -->
-<script>
-    function gtag_report_conversion(url) {
-        var callback = function() {
-            if (typeof url != "undefined") {
-                window.location = url;
-            }
-        };
-        gtag && gtag("event", "conversion", {
-            send_to: '<?= $gtag ?>',
-            value: 1.0,
-            currency: "CZK",
-            event_callback: callback
-        });
-        return;
-        false;
-    }
-</script>
+<?php if (isset($gtag)) : ?>
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function() {
+                if (typeof url != "undefined") {
+                    window.location = url;
+                }
+            };
+            gtag && gtag("event", "conversion", {
+                send_to: '<?= $gtag ?>',
+                value: 1.0,
+                currency: "CZK",
+                event_callback: callback
+            });
+            return;
+            false;
+        }
+    </script>
+<?php endif; ?>
