@@ -50,7 +50,7 @@
   // padding: 15px 0;
   .col {
     @extend %clearfix;
-    width: floor($col-width) - 0.2;
+    width: floor($col-width) - 0.4;
     position: relative;
     box-sizing: border-box;
     vertical-align: top;

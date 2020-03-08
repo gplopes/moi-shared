@@ -5,6 +5,7 @@ import trackers from "./tracking";
 import bgMove from "./move-bg";
 import slider from "./slider";
 import booking from "./bookingButtons";
+import forecast from "./forecast";
 
 export default () => {
   nav();
@@ -13,6 +14,7 @@ export default () => {
   trackers();
   slider();
   booking();
+  forecast();
   const pageLazyLoad = new LazyLoad({
     elements_selector: ".jsLazy"
   });

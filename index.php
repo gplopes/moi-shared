@@ -41,6 +41,19 @@ Kirby::plugin('moi/moi-shared', [
 
     'routes' => [
         [
+            'pattern' => '(?:(^[A-Za-z]{2})//?)?private/forecast',
+            'action' => function ($lang = 'cs') {
+
+                $key = "7344cd4309e8a73d5927c0efe4be1c35";
+                $location = "50.003782, 12.609745";
+                $query = "lang=$lang&exclude=[minutely,hourly,daily,alerts,flags]";
+
+                $response = file_get_contents("https://api.darksky.net/forecast/$key/$location?$query");
+                return new \Kirby\Http\Response($response, 'text/json', 200);
+            }
+        ],
+
+        [
             'pattern' => 'robots.txt',
             'method' => 'GET',
             'action' => function () {
@@ -50,7 +63,7 @@ Kirby::plugin('moi/moi-shared', [
                     'disallow: /kirby',
                     'disallow: /site/',
                     'allow: /media/',
-                    'sitemap: ' . url('/sitemap.xml')
+                    'sitemap: ' . url() . '/sitemap.xml'
                 );
                 $txt =  implode(PHP_EOL, $robots) . PHP_EOL;
                 if ($txt) {
@@ -62,7 +75,7 @@ Kirby::plugin('moi/moi-shared', [
             },
         ],
         [
-            'pattern' => 'sitemap.xml',
+            'pattern' => ['sitemap.xml', 'sitemap'],
             'action'  => function () {
                 $pages = site()->pages()->index();
                 $debug = kirby()->option('debug');
@@ -80,15 +93,10 @@ Kirby::plugin('moi/moi-shared', [
                 }
                 // return response with correct header type
                 return new \Kirby\Http\Response($content, 'application/xml', 200);
-                // return new Kirby\Cms\Response($content, 'application/xml');
+                // return new Kirby\Cms\Response($content, 'application/html');
             }
         ],
-        [
-            'pattern' => 'sitemap',
-            'action'  => function () {
-                return go('sitemap.xml', 301);
-            }
-        ]
+
     ],
 
     'hooks' => [
