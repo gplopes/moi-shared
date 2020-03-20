@@ -1,12 +1,17 @@
 label: Settings
 icon: cog
 columns:
-  - width: 2/3
+  - width: 1/3
     fields:
+      nav_phone:
+        label: Navigation Phone
+        type: text
       ## Cookie Banner
-      cookie-headline:
+      HEADLINE_COOKIE_BANNER:
+        label: Cookie banner
+        numbered: false
         type: headline
-        label: Cookie Banner
+        numbered: false
       cookie_banner_text:
         label: Banner Text
         buttons: false
@@ -18,19 +23,26 @@ columns:
       cookie_banner_reject:
         label: Reject Banner
         type: text
-
-      tracking_banner_header:
+  - width: 1/3
+    fields:
+      HEADLINE_TRACKING:
         type: headline
         label: Tracking
+        numbered: false
+      google_tag_manager:
+        translate: false
+        type: text
+        icon: chart
+        label: Google Tag Manager
       analytics:
         translate: false
         type: text
-        icon: code
+        icon: chart
         label: Google Analytics
       maps:
         translate: false
         type: text
-        icon: code
+        icon: map
         label: Google Maps Key API
       hotjar:
         translate: false
@@ -40,13 +52,10 @@ columns:
       log_rocket:
         translate: false
         type: text
-        icon: code
+        icon: bug
         label: Log Rocket
   - width: 1/3
     fields:
-      nav_phone:
-        label: Navigation Phone
-        type: text
       JANITOR_CACHE:
         type: janitor
         label: Clean Cache
