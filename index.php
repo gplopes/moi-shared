@@ -36,6 +36,7 @@ Kirby::plugin('moi/moi-shared', [
         'Shared/Snippets/PhotoSwipe' => __DIR__ . '/Snippets/PhotoSwipe.php',
         'Shared/Snippets/Banner' => __DIR__ . '/Snippets/Banner.php',
         'Shared/Snippets/Sitemap' => __DIR__ . '/Snippets/Sitemap.php',
+        'Shared/Snippets/GoogleTag' => __DIR__ . '/Snippets/GoogleTagManagerBody.php'
     ],
 
 
@@ -82,7 +83,7 @@ Kirby::plugin('moi/moi-shared', [
 
                 // fetch the pages to ignore from the config settings,
                 // if nothing is set, we ignore the error page
-                $ignore = kirby()->option('sitemap.ignore', ['error']);
+                $ignore = kirby()->option('sitemap.ignore', ['error', 'sitemap']);
 
                 $content = snippet('Shared/Snippets/Sitemap', compact('pages', 'ignore'), true);
 

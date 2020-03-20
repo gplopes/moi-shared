@@ -5,6 +5,13 @@ fields:
   title:
     label: Title
     type: text
+  cta_name:
+    label: Cta Button
+    type: text
+  cta_link:
+    label: Link
+    type: pages
+    max: 1
   picture:
     label: Picture or Video
     help: Image 1350x600

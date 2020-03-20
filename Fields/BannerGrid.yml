@@ -1,6 +1,6 @@
 type: group
 fields:
-  banner_title:
+  hero_title:
     label: Title
     type: textarea
     buttons: false

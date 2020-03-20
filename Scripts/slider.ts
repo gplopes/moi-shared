@@ -1,7 +1,7 @@
 import Siema from "siema";
 
 export default () => {
-  const slider = document.querySelector(".js-slider");
+  const slider = document.querySelector(".js-slider") as HTMLDivElement;
   if (!slider) {
     return null;
   }
@@ -24,23 +24,30 @@ export default () => {
     selector: ".js-slider",
     perPage: 1,
     startIndex: 0,
+    loop: true,
+    draggable: false,
+    duration: 400,
     onChange: currentPagination
   });
 
   Siema.prototype.addPagination = function() {
     for (let i = 0; i < this.innerElements.length; i++) {
-      const btn = document.createElement("button");
+      const btn = document.createElement("span");
 
       if (i == 0) {
         btn.className = "current";
       }
 
       // btn.textContent = i;
-      btn.addEventListener("click", () => this.goTo(i));
+      // btn.addEventListener("click", () => this.goTo(i));
       $pagination.appendChild(btn);
     }
     this.selector.appendChild($pagination);
   };
 
   mySiema.addPagination();
+
+  // Loop
+  const interval = slider.dataset.interval;
+  interval && setInterval(() => mySiema && mySiema.next(), Number(interval));
 };

@@ -33,26 +33,23 @@
     };
 </script>
 
-
-<!-- Event snippet for Kliknutí button conversion page In your
-  html page, add the snippet and call gtag_report_conversion when someone
-  clicks on the chosen link or button. -->
-<?php if (isset($gtag)) : ?>
+<?php if (!$site->google_tag_manager()->isEmpty()) : ?>
+    <!-- Google Tag Manager -->
     <script>
-        function gtag_report_conversion(url) {
-            var callback = function() {
-                if (typeof url != "undefined") {
-                    window.location = url;
-                }
-            };
-            gtag && gtag("event", "conversion", {
-                send_to: '<?= $gtag ?>',
-                value: 1.0,
-                currency: "CZK",
-                event_callback: callback
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
             });
-            return;
-            false;
-        }
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', '<?= $site->google_tag_manager() ?>');
     </script>
+    <!-- End Google Tag Manager -->
 <?php endif; ?>
