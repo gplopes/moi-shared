@@ -45,7 +45,7 @@ export default () => {
     this.selector.appendChild($pagination);
   };
 
-  mySiema.addPagination();
+  // mySiema.addPagination();
 
   // Loop
   const interval = slider.dataset.interval;

@@ -23,6 +23,7 @@ $container-space: 2%;
 .hero-bg {
   position: relative;
   //max-width: 1390px;
+  min-height: auto;
   margin: 0 auto;
   background-position: center;
   background-size: cover;
@@ -32,6 +33,10 @@ $container-space: 2%;
   padding: 0;
   padding-top: 70px;
   padding-bottom: 70px;
+
+  @include breakpoint($breakpoint-phablet) {
+    min-height: 400px;
+  }
 
   @include breakpoint($breakpoint-desktop-ls) {
     max-width: 1600px;

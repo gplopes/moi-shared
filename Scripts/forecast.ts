@@ -2,6 +2,7 @@ import axios from "axios";
 
 const CACHE_KEY = "MOI_FORECAST";
 
+const isSameLang = (lang: string) => lang === document.documentElement.lang;
 const next30mins = (time: Date) => new Date(new Date(time).setMinutes(30));
 const getCache = () => {
   const cached = window.localStorage.getItem(CACHE_KEY);
@@ -11,6 +12,7 @@ const getCache = () => {
       CACHE_KEY,
       JSON.stringify({
         data: dataToCache,
+        lang: document.documentElement.lang,
         timestamp: Date.now()
       })
     );
@@ -18,7 +20,10 @@ const getCache = () => {
 
   if (cached) {
     const parsedCached = JSON.parse(cached);
-    if (parsedCached.timestamp < next30mins(parsedCached.timestamp)) {
+    if (
+      parsedCached.timestamp < next30mins(parsedCached.timestamp) &&
+      isSameLang(parsedCached.lang)
+    ) {
       data = parsedCached.data;
     }
   }
@@ -36,8 +41,8 @@ const getForecast = async () => {
   const skycons = new window.Skycons();
   const $degrees = $forecast.querySelector(".js-forecast-c");
 
-  const url = `${window.location.origin}/${document.documentElement.lang}`;
-  // const url = document.location.href;
+  // const url = `${window.location.origin}/${document.documentElement.lang}`;
+  const url = document.location.href;
 
   const dataCached = getCache();
   let forecastResult = dataCached.data;
